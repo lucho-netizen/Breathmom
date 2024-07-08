@@ -1,0 +1,22 @@
+/* En tu archivo de estilos global o componente específico */
+.mat-toolbar {
+    background-color: #1976d2; /* Color de fondo del toolbar */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interior */
+  }
+  
+  .mat-toolbar span {
+    cursor: pointer;
+    margin-left: 25px; /* Margen izquierdo entre los elementos */
+    font-size: 16px; /* Tamaño de fuente */
+  }
+  
+  .mat-toolbar span:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+  }
+  
+  /* Estilos específicos para cada enlace si es necesario */
+  .mat-toolbar span.router-link-active {
+    font-weight: bold; /* Texto en negrita para el enlace activo */
+  }
+  
