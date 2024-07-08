@@ -18,23 +18,33 @@ export class LoginComponent  {
   constructor(private http: HttpClient, private router: Router) {}
   
   onSubmit(): void {
-      const formData = {
-        email: this.email,
-        password: this.password
-      };
       
-      this.http.post<any>('http://127.0.0.1:5000/login', formData).subscribe(
+        const email = this.email;
+        const password = this.password
+      
+        this.http.post<any>('http://127.0.0.1:5000/login', { correo: this.email, password: this.password })
+      .subscribe(
         (response) => {
-          console.log('ok', response)
-          // this.router.navigate(['/dashboard'])
+          // Manejar la respuesta exitosa
+          if (response && response.message === 'Usuario encontrado') {
+            localStorage.setItem('token', this.email.toString()); // Guardar el token en localStorage si está disponible
+            this.router.navigate(['/dashboard']);
+          } else {
+            // Respuesta inválida del servidor
+            this.errorMessage = 'Respuesta inválida del servidor';
+          }
         },
-        (error)=> {
-          console.error('Error al iniciar sesión:', error);
-          this.router.navigate(['/login'])
-          this.errorMessage = 'Invalid credentials';
+        (error) => {
+          // Manejar errores de HTTP
+          if (error.status === 401) {
+            this.errorMessage = 'Credenciales inválidas';
+          } else if (error.status === 404) {
+            this.errorMessage = 'Usuario no encontrado';
+          } else {
+            this.errorMessage = 'Error en el servidor. Por favor, inténtelo de nuevo más tarde.';
+          }
         }
-      )
-    }
-  
+      );
+  }
 }
 
