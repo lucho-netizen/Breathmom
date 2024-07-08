@@ -7,9 +7,10 @@ import { AdminComponent } from './components/admin/admin.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: AppComponent },
   { path: 'nav', component: NavComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'admin', component: AdminComponent },

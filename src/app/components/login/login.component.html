@@ -1,23 +1,23 @@
 <!-- login.component.html -->
+
 <div class="wrapper">
   <div class="inner">
     <img class="image-1" src="./../assets/imagenes/img.png" alt="Image 1" />
 
-    <form [formGroup]="userLogin" (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" method="post">
       <h3>Iniciar sesión</h3>
-      <br />
+
       <div class="form-holder">
         <span class="lnr lnr-user"></span>
         <input
           type="text"
           class="form-control"
-          formControlName="email"
+          [(ngModel)]="email"
           id="email"
           name="email"
           placeholder="Correo"
           required
         />
-      
       </div>
 
       <div class="form-holder">
@@ -25,20 +25,24 @@
         <input
           type="password"
           class="form-control"
-          formControlName="password"
+          [(ngModel)]="password"
+
           id="password"
           name="password"
           placeholder="Contraseña"
           required
         />
-       
       </div>
 
-      <button type="submit" [disabled]="userLogin.invalid">Send</button>
+      <button type="submit">Enviar</button>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+
+      <br><br>
 
       <div>
         <a routerLink="/adduser">
-          <p>Aún no estás registrado?</p>
+          <p>¿Aún no estás registrado?</p>
         </a>
         <a routerLink="/admin">
           <p>¿Eres el admin?</p>
@@ -49,4 +53,3 @@
     <img src="./../assets/imagenes/image-2.png" alt="Image 2" class="image-2" />
   </div>
 </div>
-  

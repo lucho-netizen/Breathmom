@@ -15,7 +15,7 @@ import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -41,6 +41,7 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: 'login', component: LoginComponent },
       { path: 'adduser', component: AdduserComponent },  // Asegúrate de tener estos componentes
