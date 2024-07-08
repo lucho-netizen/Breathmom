@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="inner">
-        <img src="" alt="" class="image-1" />
+        <img src="./../assets/imagenes/img.png" alt="" class="image-1" />
 
         <form action="" method="post">
             <h3>Regístrese</h3>
@@ -17,11 +17,12 @@
 
             <div class="form-holder">
                 <span class="lnr lnr-indent-decrease"></span>
-                <select name="tipo_documento" id="tipo_documento">
+                <select name="tipo_documento" id="tipo_documento" class="form-control">
                     <option value="CC">Cedula de Ciudadania</option>
                     <option value="TI">Tarjeta de Identidad</option>
                 </select>
             </div>
+            
 
             <div class="form-holder">
                 <span class="lnr lnr-phone"></span>
@@ -30,7 +31,7 @@
 
             <div class="form-holder">
                 <span class="lnr lnr-file-add"></span>
-                <input type="text" class="form-control" placeholder="identificacion" name="identificacion" id="identificacion" />
+                <input type="text" class="form-control" placeholder=" N&uacute;mero de Identificacion" name="identificacion" id="identificacion" />
             </div>
 
             <div class="form-holder">
@@ -58,21 +59,23 @@
                 <input type="password" class="form-control" placeholder="Confirma Contraseña" id="confirmPassword" required />
             </div>
 
-            <span id="passwordMatchMessage"></span>
+            <!-- <span id="passwordMatchMessage"></span>
             <br />
-            <span id="passwordStrengthMessage"></span>
+            <span id="passwordStrengthMessage"></span> -->
 
-            <input type="submit" value="Enviar" />
+            
+            <button type="submit" value="Enviar" class="btn-submit" >Send</button>
+
 
             <div>
                 <br />
                 <p>¿Ya estás registrado?</p>
-                <a href="/login/" target="_blank">
+                <a routerLink="/login">
                     <span>Sí</span>
                 </a>
             </div>
         </form>
 
-        <img src="../../../assets/images/image-2.png" alt="" class="image-2" />
+        <img src="./../assets/imagenes/image-2.png" alt="" class="image-2" />
     </div>
 </div>
