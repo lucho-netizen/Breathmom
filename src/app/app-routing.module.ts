@@ -6,10 +6,12 @@ import { LoginComponent } from './components/login/login.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'nav', component: NavComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'logout', component: LogoutComponent},
   { path: 'adduser', component: AdduserComponent },

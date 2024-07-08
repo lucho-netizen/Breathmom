@@ -1,99 +1,78 @@
-<title>Sign Up</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<div class="wrapper">
+    <div class="inner">
+        <img src="" alt="" class="image-1" />
 
-<body>
+        <form action="" method="post">
+            <h3>Regístrese</h3>
 
+            <div class="form-holder">
+                <span class="lnr lnr-user"></span>
+                <input type="text" class="form-control" placeholder="nombre" name="nombre" />
+            </div>
 
-    <div className="wrapper">
-        <div className="inner">
-            <img src="" alt="" className="image-1" />
+            <div class="form-holder">
+                <span class="lnr lnr-users"></span>
+                <input type="text" class="form-control" placeholder="apellido" name="apellido" id="apellido" />
+            </div>
 
-            <form onSubmit="">
-                <h3>Regístrese</h3>
+            <div class="form-holder">
+                <span class="lnr lnr-indent-decrease"></span>
+                <select name="tipo_documento" id="tipo_documento">
+                    <option value="CC">Cedula de Ciudadania</option>
+                    <option value="TI">Tarjeta de Identidad</option>
+                </select>
+            </div>
 
-                <div className="form-holder">
-                    <span className="lnr lnr-user"></span>
-                    <input type="text" className="form-control" placeholder="nombre" name="nombre" />
-                </div>
+            <div class="form-holder">
+                <span class="lnr lnr-phone"></span>
+                <input type="text" class="form-control" placeholder="Phone Number" name="celular" id="celular" />
+            </div>
 
-                <div className="form-holder">
-                    <span className="lnr lnr-users"></span>
-                    <input type="text" className="form-control" placeholder="apellido" name="apellido" id="apellido" />
-                </div>
+            <div class="form-holder">
+                <span class="lnr lnr-file-add"></span>
+                <input type="text" class="form-control" placeholder="identificacion" name="identificacion" id="identificacion" />
+            </div>
 
-                <div className="form-holder">
-                    <span className="lnr lnr-indent-decrease"></span>
-                    <select name="tipo_documento" id="tipo_documento">
-                        <option value="CC">Cedula de Ciudadania</option>
-                        <option value="TI">Tarjeta de Identidad</option>
-                    </select>
-                </div>
+            <div class="form-holder">
+                <span class="lnr lnr-smile"></span>
+                <input type="text" class="form-control" placeholder="Edad" name="edad" id="edad" />
+            </div>
 
-                <div className="form-holder">
-                    <span className="lnr lnr-phone"></span>
-                    <input type="text" className="form-control" placeholder="Phone Number" name="celular"
-                        id="celular" />
-                </div>
+            <div class="form-holder">
+                <span class="lnr lnr-heart"></span>
+                <input type="text" class="form-control" placeholder="Peso" name="peso" id="peso" />
+            </div>
 
-                <div className="form-holder">
-                    <span className="lnr lnr-file-add"></span>
-                    <input type="text" className="form-control" placeholder="identificacion" name="identificacion"
-                        id="identificacion" />
-                </div>
+            <div class="form-holder">
+                <span class="lnr lnr-envelope"></span>
+                <input type="email" class="form-control" placeholder="Correo" name="correo" id="correo" required />
+            </div>
 
-                <div className="form-holder">
-                    <span className="lnr lnr-smile"></span>
-                    <input type="text" className="form-control" placeholder="Edad" name="edad" id="edad" />
-                </div>
+            <div class="form-holder">
+                <span class="lnr lnr-lock"></span>
+                <input type="password" class="form-control" placeholder="Contraseña" id="password" name="password" required />
+            </div>
 
-                <div className="form-holder">
-                    <span className="lnr lnr-heart"></span>
-                    <input type="text" className="form-control" placeholder="Peso" name="peso" id="peso" 
-                    />
-                </div>
+            <div class="form-holder">
+                <span class="lnr lnr-lock"></span>
+                <input type="password" class="form-control" placeholder="Confirma Contraseña" id="confirmPassword" required />
+            </div>
 
-                <div className="form-holder">
-                    <span className="lnr lnr-envelope"></span>
-                    <input type="email" className="form-control" placeholder="Correo" name="correo" id="correo"
+            <span id="passwordMatchMessage"></span>
+            <br />
+            <span id="passwordStrengthMessage"></span>
 
-                    required
-                    />
-                </div>
+            <input type="submit" value="Enviar" />
 
-                <div className="form-holder">
-                    <span className="lnr lnr-lock"></span>
-                    <input type="password" className="form-control" placeholder="Contraseña" id="password"
-                        name="password" required />
-                </div>
-
-                <div className="form-holder">
-                    <span className="lnr lnr-lock"></span>
-                    <input type="password" className="form-control" placeholder="Confirma Contraseña"
-                        id="confirmPassword" required />
-                </div>
-
-                <span id="passwordMatchMessage">
-
-                </span>
+            <div>
                 <br />
-                <span id="passwordStrengthMessage">
+                <p>¿Ya estás registrado?</p>
+                <a href="/login/" target="_blank">
+                    <span>Sí</span>
+                </a>
+            </div>
+        </form>
 
-                </span>
-
-                <input type="submit" value="submit" />
-
-                <div>
-                    <br />
-                    <p>Est&aacute;s registrada?</p>
-                    <a href="/login/" target="_blank">
-                        <span>Sí</span>
-                    </a>
-                </div>
-            </form>
-
-
-            <img src="../../../assets/images/image-2.png" alt="" className="image-2" />
-        </div>
+        <img src="../../../assets/images/image-2.png" alt="" class="image-2" />
     </div>
-
-</body>
+</div>

@@ -1,1 +1,35 @@
-<p>admin works!</p>
+<div class="wrapper">
+    <div class="inner">
+      <img class="image-1" src="../../../assets/images/img.png" alt="Image 1" />
+  
+      <form>
+        <h3>Iniciar sesión</h3>
+        <br />
+        <div class="form-holder">
+          <span class="lnr lnr-user"></span>
+          <input type="text" class="form-control" name="email" placeholder="Correo" required />
+        </div>
+  
+        <div class="form-holder">
+          <span class="lnr lnr-lock"></span>
+          <input type="password" class="form-control" name="password" id="password" placeholder="Contraseña" required />
+        </div>
+  
+        <button type="submit">Send</button>
+  
+        <div>
+          <a routerLink="/adduser">
+            <p>Aún no estás registrado?</p>
+          </a>
+  
+          <a routerLink="/admin">
+            <p>¿Eres el admin?</p>
+          </a>
+  
+  
+        </div>
+      </form>
+  
+      <img src="../../../assets/images/image-2.png" alt="Image 2" class="image-2" />
+    </div>
+  </div>
