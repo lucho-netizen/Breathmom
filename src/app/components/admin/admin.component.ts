@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: '../../../assets/css/login.css'
 })
 export class AdminComponent {
-
+  title = 'hey'
 }

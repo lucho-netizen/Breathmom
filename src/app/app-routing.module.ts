@@ -8,14 +8,16 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppComponent } from './app.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'nav', component: NavComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'logout', component: LogoutComponent},
+  { path: 'logout', component: LogoutComponent },
   { path: 'adduser', component: AdduserComponent },
+  { path: 'chat', component: ChatComponent },
   { path: 'chatbot', component: ChatbotComponent },
   { path: '**', component: LoginComponent }
 ];

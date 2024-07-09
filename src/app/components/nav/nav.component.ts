@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../auth.service';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,8 +7,17 @@ import { Router } from '@angular/router';
   templateUrl: './nav.component.html',
   styleUrl: '../../../assets/css/nav.css'
 })
-export class NavComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+export class NavComponent implements OnInit {
+
+  constructor(private authService: AuthService, private router: Router) { }
+
+  ngOnInit(): void {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/dashboard']); // Redirigir al componente de home si está logueado
+    } else {
+      this.router.navigate(['/login']); // Redirigir al componente de login si no está logueado
+    }
+  }
 
   logout(): void {
     this.authService.logout();
