@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { UserService } from '../../services/user.service';
-
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -17,43 +17,22 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string = '';
 
-  // constructor(private http: HttpClient, private router: Router) {}
-
-  // onSubmit(): void {
-
-  //       const email = this.email;
-  //       const password = this.password
-
-  //       this.http.post<any>('http://127.0.0.1:5000/login', { correo: this.email, password: this.password })
-  //     .subscribe(
-  //       (response) => {
-  //         // Manejar la respuesta exitosa
-  //         if (response && response.message === 'Usuario encontrado') {
-  //           localStorage.setItem('token', response.token); // Guardar el token en localStorage si está disponible
-  //           this.router.navigate(['/dashboard']);
-  //         } else {
-  //           // Respuesta inválida del servidor
-  //           this.errorMessage = 'Respuesta inválida del servidor';
-  //         }
-  //       },
-  //       (error) => {
-  //         // Manejar errores de HTTP
-  //         if (error.status === 401) {
-  //           this.errorMessage = 'Credenciales inválidas';
-  //         } else if (error.status === 404) {
-  //           this.errorMessage = 'Usuario no encontrado';
-  //         } else {
-  //           this.errorMessage = 'Error en el servidor. Por favor, inténtelo de nuevo más tarde.';
-  //         }
-  //       }
-  //     );
-  // }
-
   constructor(
     private authService: AuthService,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private titleService: Title
   ) { }
+ 
+
+
+  setTitle(newTitle: string){
+    this.titleService.setTitle(newTitle);
+  }
+
+  getPageTitle(): string {
+    return this.titleService.getTitle();
+  }
 
   onSubmit(): void {
     if (this.email && this.password) {

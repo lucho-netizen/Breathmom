@@ -18,7 +18,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { DashboardadminComponent } from './components/dashboardadmin/dashboardadmin.component';
 
+import { AdminAuthGuard } from './admin-auth/admin-auth.guard'; // Importa el guardia de rutas
 
 
 
@@ -32,7 +34,9 @@ import { RouterModule } from '@angular/router';
     ChatbotComponent,
     FooterComponent,
     LogoutComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashboardadminComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -43,12 +47,15 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: 'index', component: AppComponent },
       { path: 'login', component: LoginComponent },
       { path: 'adduser', component: AdduserComponent },  // Asegúrate de tener estos componentes
       { path: 'admin', component: AdminComponent },  // Asegúrate de tener estos componentes
       { path: 'dashboard', component: DashboardComponent },  // Ruta de redirección después del login exitoso
-      { path: '', redirectTo: '/login', pathMatch: 'full' }
+      { path: 'dashboardadmin', component: DashboardadminComponent},
+      { path: '', redirectTo: '/index', pathMatch: 'full' }
     ])
+    
 
   ],
 
