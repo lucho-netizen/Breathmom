@@ -23,6 +23,7 @@ import { RouterModule } from '@angular/router';
 import { AdminAuthGuard } from './admin-auth/admin-auth.guard'; // Importa el guardia de rutas
 import { AdminPatientsComponent } from './components/admin/dashboard/patients/patients.component';
 import { AdminNavComponent } from './components/admin/nav/nav.component';
+import { PatientService } from './services/patient/patient.service';
 
 
 
@@ -68,7 +69,8 @@ import { AdminNavComponent } from './components/admin/nav/nav.component';
   bootstrap: [AppComponent, AdminPatientsComponent],
 
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    PatientService
   
   ]
   

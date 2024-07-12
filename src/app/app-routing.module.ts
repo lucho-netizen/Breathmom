@@ -29,21 +29,23 @@ const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'index', component: AppComponent },
   { path: 'nav', component: NavComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard, RoleGuard], data: { expectRole: 'user'} },
-  { path: 'login', component: LoginComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard, RoleGuard], data: { expectRole: 'user' } },
+  { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'adduser', component: AdduserComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'chatbot', component: ChatbotComponent },
   // Rutas específicas para Admin
   { path: 'loginadmin', component: LoginAdminComponent },
-  { path: 'dashboardadmin', component: AdminDashboardComponent, canActivate: [AdminAuthGuard], data: {title: 'Dashboard'} },
+  { path: 'dashboardadmin', component: AdminDashboardComponent, canActivate: [AdminAuthGuard], data: { title: 'Dashboard' } },
   { path: 'adminpatients', component: AdminPatientsComponent },
+  { path: 'navadmin', component: AdminNavComponent },
+
   { path: '**', component: AppComponent }
 
-  
-  
-  
+
+
+
 ];
 
 @NgModule({
