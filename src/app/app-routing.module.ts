@@ -11,15 +11,19 @@ import { DashboardadminComponent } from './components/dashboardadmin/dashboardad
 import { AppComponent } from './app.component';
 import { ChatComponent } from './components/chat/chat.component';
 
-// Security for admin 
+// Security for admin && user
 
 import {AdminAuthGuard } from './admin-auth/admin-auth.guard'
+import { AuthGuard } from './guards/auth.guard';
+import { RoleGuard } from './guards/role.guard';
+
+//Routes
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'index', component: AppComponent },
   { path: 'nav', component: NavComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard, RoleGuard], data: { expectRole: 'user'} },
   { path: 'login', component: LoginComponent},
   { path: 'admin', component: AdminComponent},
   { path: 'dashboardadmin', component: DashboardadminComponent, canActivate: [AdminAuthGuard], data: {title: 'Dashboard'}} ,
