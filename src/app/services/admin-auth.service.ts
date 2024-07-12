@@ -56,6 +56,6 @@ export class AdminAuthService {
 
   logoutAdmin(): void {
     localStorage.removeItem(this.TOKETN_KEY);
-    this.router.navigate(['/admin'])
+    this.router.navigate(['/loginadmin'])
   }
 }

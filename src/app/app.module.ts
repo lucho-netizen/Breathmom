@@ -2,25 +2,29 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar'
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './components/nav/nav.component';
+import { NavComponent } from './components/patients/nav/nav.component';
+import { AdduserComponent } from './components/patients/adduser/adduser.component';
+import { LoginComponent } from './components/patients/login/login.component';
+import { LoginAdminComponent } from './components/admin/login/login.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { ChatbotComponent } from './components/patients/chatbot/chatbot.component';
+import { DashboardComponent } from './components/patients/dashboard/dashboard.component';
+import { AdminDashboardComponent } from './components/admin/dashboard/dashboard/dashboard.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdduserComponent } from './components/adduser/adduser.component';
-import { LoginComponent } from './components/login/login.component';
-import { AdminComponent } from './components/admin/admin.component';
-import { ChatbotComponent } from './components/chatbot/chatbot.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { LogoutComponent } from './components/logout/logout.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { FooterComponent } from './components/patients/footer/footer.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { DashboardadminComponent } from './components/dashboardadmin/dashboardadmin.component';
+
 
 import { AdminAuthGuard } from './admin-auth/admin-auth.guard'; // Importa el guardia de rutas
+import { PatientService } from './services/patient/patient.service';
+import { AdminPatientsComponent } from './components/admin/dashboard/patients/patients.component';
+import { AdminNavComponent } from './components/admin/nav/nav.component';
+
 
 
 
@@ -30,13 +34,16 @@ import { AdminAuthGuard } from './admin-auth/admin-auth.guard'; // Importa el gu
     NavComponent,
     AdduserComponent,
     LoginComponent,
-    AdminComponent,
+    LoginAdminComponent,
     ChatbotComponent,
     FooterComponent,
     LogoutComponent,
     DashboardComponent,
-    DashboardadminComponent,
+    AdminDashboardComponent,
+    AdminPatientsComponent,
+    AdminNavComponent
     
+
   ],
   imports: [
     BrowserModule,
@@ -50,9 +57,9 @@ import { AdminAuthGuard } from './admin-auth/admin-auth.guard'; // Importa el gu
       { path: 'index', component: AppComponent },
       { path: 'login', component: LoginComponent },
       { path: 'adduser', component: AdduserComponent },  // Asegúrate de tener estos componentes
-      { path: 'admin', component: AdminComponent },  // Asegúrate de tener estos componentes
+      { path: 'admin', component: LoginAdminComponent },  // Asegúrate de tener estos componentes
       { path: 'dashboard', component: DashboardComponent },  // Ruta de redirección después del login exitoso
-      { path: 'dashboardadmin', component: DashboardadminComponent},
+      { path: 'dashboardadmin', component: AdminDashboardComponent},
       { path: '', redirectTo: '/index', pathMatch: 'full' }
     ])
     
@@ -62,7 +69,8 @@ import { AdminAuthGuard } from './admin-auth/admin-auth.guard'; // Importa el gu
   bootstrap: [AppComponent],
 
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    PatientService
 
   ]
 })

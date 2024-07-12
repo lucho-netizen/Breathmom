@@ -16,7 +16,7 @@ export class AdminAuthGuard implements CanActivate {
     if (this.adminAuthService.isLoggedInAdmin()) {
       return true; // Permite la navegación si el administrador está autenticado
     } else {
-      this.router.navigate(['/admin']); // Redirige al login del admin si no está autenticado
+      this.router.navigate(['/loginadmin']); // Redirige al login del admin si no está autenticado
       return false;
     }
   }
