@@ -38,6 +38,7 @@ const routes: Routes = [
   // Rutas específicas para Admin
   { path: 'loginadmin', component: LoginAdminComponent },
   { path: 'dashboardadmin', component: AdminDashboardComponent, canActivate: [AdminAuthGuard], data: {title: 'Dashboard'} },
+  { path: 'adminpatients', component: AdminPatientsComponent },
   { path: '**', component: AppComponent }
 
   
